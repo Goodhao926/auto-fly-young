@@ -1,0 +1,8 @@
+lxml==4.6.3
+PyExecJS==1.5.1
+opencv_python
+tensorflow
+win10toast==0.9
+numpy==1.19.2
+requests==2.24.0
+PyQt5==5.15.4
