@@ -52,9 +52,9 @@ python auto_fly_young_win10.py
 
 
 
-![image-20210423222930615](C:\Users\goodhao\AppData\Roaming\Typora\typora-user-images\image-20210423222934066.png)
+![image-20210423222930615](https://i.loli.net/2021/04/23/h4Aopml2wgJeKRI.png)
 
-![image-20210423223017682](C:\Users\goodhao\AppData\Roaming\Typora\typora-user-images\image-20210423223017682.png)
+![image-20210423223017682](https://i.loli.net/2021/04/23/bDvHpJrcCPtu1Ah.png)
 
 不同大小的数据集对loss的影响
 
