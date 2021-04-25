@@ -3,7 +3,6 @@ from lxml import etree
 import execjs
 import time
 import os
-import win10toast
 from recognition import predict
 wlanacip = "183.3.151.148" #服务器IP 不需要修改
 wlanuserip = "172.16.141.135" # 学校DHCP分配的IP
@@ -19,7 +18,7 @@ def auto_connect():
         try:
             res = sess.get(f"http://125.88.59.131:10001/qs/index_gz.jsp?wlanacip={wlanacip}&wlanuserip={wlanuserip}")
             # 识别验证码
-            url = "http://125.88.59.131:10001/common/image_code.jsp?time=" + str(time.time_ns())
+            url = "http://125.88.59.131:10001/common/image_code.jsp?time=" + str(time.time())
 
             with open("tmp/tmp.jpg", "wb") as f:
                 f.write(sess.get(url).content)
@@ -58,11 +57,10 @@ def auto_connect():
 
 
 def internet_test():
-    res = os.system("ping www.baidu.com -n 1")
+    res = os.system("ping www.baidu.com -c 1")
     return res == 0
 
 if __name__ == '__main__':
-    toast = win10toast.ToastNotifier()
 
     while True:
         if not internet_test():

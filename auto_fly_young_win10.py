@@ -16,6 +16,10 @@ def auto_connect():
     global try_num
     global is_connect
     with requests.session() as sess:
+        # 使用移动端的AG可能会减少下线率 Maybe
+        sess.headers = {
+            "User-Agent":'Mozilla/5.0 (Linux; U; Android 8.1.0; zh-cn; BLA-AL00 Build/HUAWEIBLA-AL00) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/57.0.2987.132 MQQBrowser/8.9 Mobile Safari/537.36'
+        }
         try:
             res = sess.get(f"http://125.88.59.131:10001/qs/index_gz.jsp?wlanacip={wlanacip}&wlanuserip={wlanuserip}")
             # 识别验证码

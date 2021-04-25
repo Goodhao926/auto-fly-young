@@ -29,9 +29,34 @@ python auto_fly_young_win10.py
 
 ## Docker
 
-> 正在肝...
->
-> 在ubuntu里面装tensorflow和opencv限制太多了，目前还不知道能不能在树莓派ARM里面实现
+### Dockerfile运行
+
+```dockerfile
+FROM tensorflow
+WORKDIR /usr/src/app
+RUN apt update -y
+RUN apt install libgl1-mesa-glx -y
+COPY requirements.txt ./
+RUN pip install opencv-python
+RUN pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+ENV ops_config=produce
+# 配置时间
+ENV TimeZone=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TimeZone /etc/localtime && echo $TimeZone > /etc/timezone
+RUN apt-get install inetutils-ping
+RUN apt-get install nodejs -y
+COPY . .
+CMD [ "python", "./auto_fly_young_linux.py" ]
+```
+
+```shell
+sudo docker build -t auto-fly .
+sudo docker run -itd auto-fly
+```
+
+
+
+> ARM架构还在肝，不知道树莓派能不能运行。
 >
 > 学校网络真的忒慢了
 
