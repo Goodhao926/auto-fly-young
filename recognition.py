@@ -2,7 +2,6 @@ import tensorflow as tf
 import numpy as np
 import cv2 as cv
 from datasetGen.utils.VerifyCode import VeifyCode
-
 label = ['2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e',
          'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
