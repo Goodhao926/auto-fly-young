@@ -31,6 +31,8 @@ python auto_fly_young_win10.py
 
 ### Dockerfile运行
 
+PS：`python`镜像使用的是`Apline`的微Linux内核，在TF官方文档中只能支持`ubuntu`，镜像高达`2.19G`
+
 ```dockerfile
 FROM tensorflow
 WORKDIR /usr/src/app
@@ -56,7 +58,7 @@ sudo docker run -itd auto-fly
 
 
 
-> ARM架构还在肝，不知道树莓派能不能运行。
+> 支持X86架构，ARM架构不支持，树莓派估计无缘了。
 >
 > 学校网络真的忒慢了
 
@@ -70,7 +72,7 @@ sudo docker run -itd auto-fly
   - 图像分割
   - 34分类任务
   - 11层类似LeNet网络搭建
-  - 输入22*22 输出34
+  - 输入22*22 输出34分类
 - 网络连接
   - 登录接口RSA加密处理
   - 自动重连

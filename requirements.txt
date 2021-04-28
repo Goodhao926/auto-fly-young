@@ -5,3 +5,4 @@ tensorflow
 numpy==1.19.2
 requests==2.24.0
 PyQt5==5.15.4
+uwsgi

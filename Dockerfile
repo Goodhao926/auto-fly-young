@@ -1,4 +1,4 @@
-FROM tensorflow
+FROM tensorflow/tensorflow
 WORKDIR /usr/src/app
 RUN apt update -y
 RUN apt install libgl1-mesa-glx -y
@@ -12,4 +12,4 @@ RUN ln -snf /usr/share/zoneinfo/$TimeZone /etc/localtime && echo $TimeZone > /et
 RUN apt-get install inetutils-ping
 RUN apt-get install nodejs -y
 COPY . .
-CMD [ "python", "./auto_fly_young_linux.py" ]
+CMD [ "uwsgi", "-i","uwsgi.ini" ]
